@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CarApi } from "../../../../models/types";
 
 interface CarItemProps {
@@ -6,8 +7,12 @@ interface CarItemProps {
 }
 
 const CarItem: React.FC<CarItemProps> = ({ car }) => {
+
+  const linkPath = `/cars/${car.id}`;
+
   return (
     <li>
+      <Link href={linkPath}>
       <Image
         src={car.imageUrl}
         style={{ objectFit: "scale-down" }}
@@ -36,6 +41,8 @@ const CarItem: React.FC<CarItemProps> = ({ car }) => {
       <div>
         <h4>{car.city}</h4>
       </div>
+
+      </Link>
     </li>
   );
 };

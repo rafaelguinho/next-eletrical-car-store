@@ -13,7 +13,7 @@ export default class CarsService implements ICarsService {
   }
 
   async getCar(id: string): Promise<CarDetailApi> {
-    const response = await fetch(`${BASE_URL}/car/${id}`);
+    const response = await fetch(`${BASE_URL}/cars/${id}`);
 
     const data: CarDetailApi = await response.json();
 
@@ -21,7 +21,7 @@ export default class CarsService implements ICarsService {
   }
 
   async getCarsIds(): Promise<string[]> {
-    const response = await fetch(`${BASE_URL}`);
+    const response = await fetch(`${BASE_URL}/cars/ids`);
 
     const data: string[] = await response.json();
 
