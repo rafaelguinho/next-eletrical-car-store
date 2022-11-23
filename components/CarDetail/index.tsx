@@ -10,7 +10,7 @@ const CarDetail: React.FC<CarDetailProps> = ({ car }) => {
     <section className="w-full flex relative p-4">
       <div className="flex w-full justify-center">
         <Image
-          className="w-[70%] bg-gradient-to-t object-cover h-[32rem]"
+          className="xl:w-[70%] sm:w-full bg-gradient-to-t object-cover h-[32rem]"
           loading="lazy"
           placeholder="empty"
           src={car.imageUrl}
@@ -20,43 +20,57 @@ const CarDetail: React.FC<CarDetailProps> = ({ car }) => {
         />
       </div>
 
-      <div className="p-4 w-[60%] ml-auto mr-auto left-0 right-0 absolute top-[30rem] bg-slate-700 mb-3 rounded-lg">
-        <h1 className="flex-auto font-light text-3xl text-white">
-          {car.brand} {car.model}
-        </h1>
-        <h2 className="text-s w-full text-slate-500">{car.description}</h2>
+      <div className="shadow-md p-4 xl:w-[60%] max-sm:w-[90%] ml-auto mr-auto left-0 right-0 absolute top-[30rem] bg-slate-700 mb-3 rounded-t-lg">
+        <div className="flex justify-between">
+          <h1 className="flex-auto font-light text-3xl text-white">
+            {car.brand} {car.model}
+          </h1>
 
-        <div>
-          <ul>
-            <li>
-              <h3>Cidade</h3>
-              <strong>{car.city}</strong>
-            </li>
-            <li>
-              <h3>Ano</h3>
-              <strong>
-                {car.manufactureYear}/{car.modelYear}
-              </strong>
-            </li>
-            <li>
-              <h3>KM</h3>
-              <strong>{car.kilometersDriven}</strong>
-            </li>
-            <li>
-              <h3>Câmbio</h3>
-              <strong>{car.transmissionType}</strong>
-            </li>
-
-            <li>
-              <h3>Final de placa</h3>
-              <strong>{car.plateLastNumber}</strong>
-            </li>
-            <li>
-              <h3>Cor</h3>
-              <strong>{car.color}</strong>
-            </li>
-          </ul>
+          <h4 className="text-3xl font-bold text-yellow-600">
+            {new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(car.price)}
+          </h4>
         </div>
+
+        <h2 className="text-xl w-full text-slate-500">{car.description}</h2>
+
+        <ul className="grid 2xl:grid-cols-4 max-sm:grid-cols-2 gap-5 p-4 mt-2">
+          <li className="min-h-[40px]">
+            <h3 className="text-xs w-full text-slate-400 mb-">Cidade</h3>
+            <address>
+              <strong className="font-medium">{car.city}</strong>
+            </address>
+          </li>
+          <li className="min-h-[40px]">
+            <h3 className="text-xs w-full text-slate-400 mb-">Ano</h3>
+            <strong className="font-medium">
+              {car.manufactureYear}/{car.modelYear}
+            </strong>
+          </li>
+          <li className="min-h-[40px]">
+            <h3 className="text-xs w-full text-slate-400 mb-">KM</h3>
+            <strong className="font-medium">{`${new Intl.NumberFormat(
+              "pt-BR"
+            ).format(car.kilometersDriven)} km`}</strong>
+          </li>
+          <li className="min-h-[40px]">
+            <h3 className="text-xs w-full text-slate-400 mb-">Câmbio</h3>
+            <strong className="font-medium">{car.transmissionType}</strong>
+          </li>
+
+          <li className="min-h-[40px]">
+            <h3 className="text-xs w-full text-slate-400 mb-">
+              Final de placa
+            </h3>
+            <strong className="font-medium">{car.plateLastNumber}</strong>
+          </li>
+          <li className="min-h-[40px]">
+            <h3 className="text-xs w-full text-slate-400 mb-">Cor</h3>
+            <strong className="font-medium">{car.color}</strong>
+          </li>
+        </ul>
       </div>
     </section>
   );

@@ -13,7 +13,7 @@ const CarItem: React.FC<CarItemProps> = ({ car }) => {
     <li>
       <Link
         href={linkPath}
-        className="flex font-sans h-50 bg-slate-700 mb-3 rounded-lg"
+        className="flex font-sans h-50 bg-slate-700 rounded-lg"
       >
         <div className="flex-none w-56 relative">
           <Image
@@ -21,8 +21,8 @@ const CarItem: React.FC<CarItemProps> = ({ car }) => {
             loading="lazy"
             src={car.imageUrl}
             alt="Picture of the author"
-            width={500}
-            height={500}
+            width={300}
+            height={300}
           />
         </div>
 
@@ -35,21 +35,19 @@ const CarItem: React.FC<CarItemProps> = ({ car }) => {
               {`${car.brand} ${car.model}`}
             </h2>
 
-            <h3 className="text-sm w-full text-slate-500">{car.description}</h3>
+            <h3 className="text-sm w-full text-slate-500 overflow-ellipsis overflow-hidden whitespace-nowrap">
+              {car.description}
+            </h3>
 
-            <div className="w-full flex-none mt-2 text-3xl font-bold text-yellow-600">
-              <h4>
-                {new Intl.NumberFormat("pt-BR", {
-                  style: "currency",
-                  currency: "BRL",
-                }).format(car.price)}
-              </h4>
-            </div>
+            <h4 className="w-full flex-none mt-2 2xl:text-3xl xl:text-2xl font-bold text-yellow-600">
+              {new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              }).format(car.price)}
+            </h4>
 
-            <div className="w-full flex flex-row justify-between mt-5 text-1xl font-light text-yellow-600">
-              <h4>
-                {car.manufactureYear} / {car.modelYear}
-              </h4>
+            <div className="h-9 w-full flex flex-row items-end justify-between mt-5 text-1xl font-light text-yellow-600">
+              <h4>{`${car.manufactureYear} / ${car.modelYear}`}</h4>
 
               <h4>
                 {`${new Intl.NumberFormat("pt-BR").format(
@@ -57,16 +55,6 @@ const CarItem: React.FC<CarItemProps> = ({ car }) => {
                 )} km`}
               </h4>
             </div>
-
-            <div className="w-full flex-none mt-5 text-1xl font-light text-yellow-600"></div>
-
-            {/* <div className="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
-              
-
-              <h4 className="text-sm w-full">{car.kilometersDriven}</h4>
-
-              <h4 className="text-sm w-full">{car.city}</h4>
-            </div> */}
           </div>
         </div>
       </Link>
