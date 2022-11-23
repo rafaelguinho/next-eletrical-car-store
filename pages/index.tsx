@@ -11,7 +11,7 @@ const HomePage: React.FC<AllCarsPageProps> = ({ cars }) => {
   return (
     <>
       <Head>
-        <title>All Posts</title>
+        <title>All Cars</title>
         <meta
           name="description"
           content="A list of all programming-related tutorials and posts!"
