@@ -8,7 +8,6 @@ interface AllCarsProps {
 const AllCars: React.FC<AllCarsProps> = ({ cars }) => {
   return (
     <section>
-      <h1>All Cars</h1>
       <CarsGrid cars={cars} />
     </section>
   );
