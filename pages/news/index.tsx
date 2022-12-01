@@ -1,7 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function NewsPage() {
+
+  const router = useRouter();
+
   return (
     <div>
       <Head>
@@ -18,9 +22,24 @@ export default function NewsPage() {
             <Link href="/news/nextjs-is-great">NextJS is great</Link>
           </li>
           <li>
-            <Link href="/news/something-else">Something else</Link>
+            <a href="/news/something-else">Something else</a>
           </li>
         </ul>
+
+
+        <br />
+        <br />
+        <br />
+
+        <button onClick={() => router.push('/news/navegação via código')}>
+          Navegação via código
+        </button>
+
+
+        <br />
+        <br />
+        <br />
+
       </main>
 
       <footer>
