@@ -33,7 +33,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     props: {
       car,
     },
-    revalidate: 600,
+    revalidate: 60, // In seconds
   };
 }
 
@@ -43,7 +43,7 @@ export async function getStaticPaths() {
 
   return {
     paths: ids.map((id) => ({ params: { carId: id } })),
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 

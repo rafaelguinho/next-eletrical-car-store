@@ -30,6 +30,7 @@ export async function getStaticProps() {
     props: {
       cars: allCars,
     },
+    revalidate: 30, // In seconds
   };
 }
 
