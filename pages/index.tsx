@@ -1,36 +1,9 @@
-import Head from "next/head";
-import AllCars from "../components/AllCars";
-import { CarApi } from "../models/types";
-import CarsService from "../services/cars";
-
-interface AllCarsPageProps {
-  cars: CarApi[];
-}
-
-const HomePage: React.FC<AllCarsPageProps> = ({ cars }) => {
+const HomePage: React.FC = () => {
   return (
     <>
-      <Head>
-        <title>All Cars</title>
-        <meta
-          name="description"
-          content="A list of all programming-related tutorials and posts!"
-        />
-      </Head>
-      <AllCars cars={cars} />
+      <h1>Lista de veículos</h1>
     </>
   );
 };
-
-export async function getStaticProps() {
-  const carsService = new CarsService();
-  const allCars: CarApi[] = await carsService.getCars();
-
-  return {
-    props: {
-      cars: allCars,
-    },
-  };
-}
 
 export default HomePage;
