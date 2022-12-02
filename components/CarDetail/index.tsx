@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CarDetailApi } from "../../models/types";
 
 interface CarDetailProps {
@@ -9,7 +8,7 @@ const CarDetail: React.FC<CarDetailProps> = ({ car }) => {
   return (
     <section className="w-full flex relative p-4">
       <div className="flex w-full justify-center">
-        <Image
+        <img
           className="xl:w-[70%] sm:w-full bg-gradient-to-t object-cover h-[32rem]"
           loading="lazy"
           placeholder="empty"

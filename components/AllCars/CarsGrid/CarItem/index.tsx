@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { CarApi } from "../../../../models/types";
 
@@ -16,7 +15,7 @@ const CarItem: React.FC<CarItemProps> = ({ car }) => {
         className="flex font-sans h-50 bg-slate-700 rounded-lg"
       >
         <div className="flex-none w-56 relative">
-          <Image
+          <img
             className="absolute inset-0 w-full h-full object-cover rounded-lg"
             loading="lazy"
             src={car.imageUrl}
