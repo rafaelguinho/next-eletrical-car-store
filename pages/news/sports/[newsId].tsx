@@ -1,9 +1,11 @@
-import React from 'react'
+import { useRouter } from "next/router";
+import React from "react";
 
 const Noticia3 = () => {
-  return (
-    <h1>Brasil é Hexa!</h1>
-  )
-}
+  const router = useRouter();
+  const { newsId } = router.query;
 
-export default Noticia3
+  return <h1>{newsId}</h1>;
+};
+
+export default Noticia3;
