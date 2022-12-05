@@ -36,7 +36,7 @@ const CarDetail: React.FC<CarDetailProps> = ({ car }) => {
 
         <h2 className="text-xl w-full text-slate-500">{car.description}</h2>
 
-        <ul className="grid 2xl:grid-cols-4 max-sm:grid-cols-2 gap-5 p-4 mt-2">
+        <ul className="grid lg:grid-cols-4 max-sm:grid-cols-2 gap-5 p-4 mt-2">
           <li className="min-h-[40px]">
             <h3 className="text-xs w-full text-slate-400 mb-">Cidade</h3>
             <address>
