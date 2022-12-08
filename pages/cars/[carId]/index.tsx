@@ -14,8 +14,8 @@ const CarDetailPage: React.FC<CarDetailPageProps> = ({ car }) => {
   return (
     <>
       <Head>
-        <title>{cardDescription}</title>
-        <meta name="description" content={cardDescription} />
+        <title>Carro elétrico - {cardDescription}</title>
+        <meta name="description" content={`Compre o ${cardDescription} pronta entrega e preço imbatível.`} />
       </Head>
       <CarDetail car={car} />
     </>

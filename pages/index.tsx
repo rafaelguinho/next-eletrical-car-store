@@ -11,10 +11,10 @@ const HomePage: React.FC<AllCarsPageProps> = ({ cars }) => {
   return (
     <>
       <Head>
-        <title>All Cars</title>
+        <title>Carros elétricos</title>
         <meta
           name="description"
-          content="A list of all programming-related tutorials and posts!"
+          content="Carros elétricos com grande autonomia, não poluem o meio ambiente e você economiza."
         />
       </Head>
       <AllCars cars={cars} />
