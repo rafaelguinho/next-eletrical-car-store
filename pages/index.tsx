@@ -28,7 +28,7 @@ export default function Home() {
 
       <button
         onClick={() => {
-          router.push("news/noticia 1");
+          router.push("news/notícia 1");
         }}
       >
         Navegar via código
